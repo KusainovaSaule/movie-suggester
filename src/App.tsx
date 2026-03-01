@@ -1,37 +1,33 @@
-import './App.css'
+import './App.css';
 
-import { useState } from 'react'
+import { useState } from 'react';
 
-import { movies } from './movies-data.ts'
+import { movies } from './movies-data.ts';
 
 function App() {
-  const [currentMovie, setCurrentMovie] = useState<null | typeof movies[0]>(null)
+    const [currentMovie, setCurrentMovie] = useState<null | (typeof movies)[0]>(null);
 
-  const getRandomMovie = () => {
-    const randomIndex = Math.floor(Math.random() * movies.length)
-    setCurrentMovie(movies[randomIndex])
-  }
+    const getRandomMovie = () => {
+        const randomIndex = Math.floor(Math.random() * movies.length);
+        setCurrentMovie(movies[randomIndex]);
+    };
 
-  return (
-    <div className="container">
-      <h1>Что посмотреть сегодня?</h1>
-      
-      <button onClick={getRandomMovie} className="choose-button">
-        Выбрать фильм
-      </button>
+    return (
+        <div className="container">
+            <h1>Что посмотреть сегодня?</h1>
 
-      {currentMovie && (
-        <div className="movie-card">
-          <h2 className="movie-title">{currentMovie.title}</h2>
-          <img 
-            src={currentMovie.image} 
-            alt={currentMovie.title}
-            className="movie-image"
-          />
+            <button onClick={getRandomMovie} className="choose-button">
+                Выбрать фильм
+            </button>
+
+            {currentMovie && (
+                <div className="movie-card">
+                    <h2 className="movie-title">{currentMovie.title}</h2>
+                    <img src={currentMovie.image} alt={currentMovie.title} className="movie-image" />
+                </div>
+            )}
         </div>
-      )}
-    </div>
-  )
+    );
 }
 
-export default App
+export default App;
