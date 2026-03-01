@@ -1,9 +1,8 @@
-import { useState } from 'react'
 import './App.css'
-import { movies } from './movies-data.ts'
 
-const test = 'hello';
-test = 'bye';
+import { useState } from 'react'
+
+import { movies } from './movies-data.ts'
 
 function App() {
   const [currentMovie, setCurrentMovie] = useState<null | typeof movies[0]>(null)
