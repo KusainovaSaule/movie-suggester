@@ -12,5 +12,12 @@ module.exports = {
                 tabWidth: 2,
             },
         },
+        {
+            files: ['*.html'],
+            options: {
+                parser: 'html',
+                tabWidth: 2,
+            },
+        },
     ],
 };
